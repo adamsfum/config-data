@@ -1,14 +1,6 @@
 spring:
-  profiles:
-    active: uat
-  application:
-    name: config-server  # 应用名称
-
-eureka:
-  instance:
-    hostname: ${spring.application.name}
-    instance-id: ${eureka.instance.hostname}:${server.port}
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/sgp?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
